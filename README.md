@@ -29,8 +29,9 @@ munusmodulus+dev@gmail.com
 ## License
 
 MIT
-
+<!-- 
 ## Legal
 
 Specified Commercial Transactions Act notice:  
 https://munusmodulus.github.io/imagerangedownloader/docs/tokushoho.html
+-->
