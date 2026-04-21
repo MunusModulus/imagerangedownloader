@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<title data-i18n="extName"></title>
+
+<link rel="stylesheet" href="css/options.css">
+
+</head>
+
+<body>
+<div id="wrap">
+
+<h1 data-i18n="settings_title"></h1>
+
+<div id="aboutLinkWrap">
+  <a href="#" id="aboutLink" data-i18n="about_link"></a>
+</div>
+
+<div id="settingsView">
+
+<div class="section">
+
+<h2 data-i18n="section_rangeSelection"></h2>
+
+<div class="row">
+
+<label data-i18n="label_rangeModifierKeys"></label>
+
+<div class="keys">
+<label><input type="checkbox" id="rangeCtrl"> Ctrl</label>
+<label><input type="checkbox" id="rangeAlt"> Alt</label>
+<label><input type="checkbox" id="rangeShift"> Shift</label>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2 data-i18n="section_selectionBox"></h2>
+
+<div class="row">
+<label data-i18n="label_color"></label>
+<input type="color" id="boxColor">
+</div>
+
+<div class="row">
+<label data-i18n="label_width"></label>
+<input type="number" id="boxWidth" min="1" max="10">
+</div>
+
+<div class="row">
+<label data-i18n="label_style"></label>
+
+<select id="boxStyle">
+<option value="solid" data-i18n="style_solid"></option>
+<option value="dashed" data-i18n="style_dashed"></option>
+<option value="dotted" data-i18n="style_dotted"></option>
+</select>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2 data-i18n="section_targetHighlight"></h2>
+
+<div class="row">
+<label data-i18n="label_color"></label>
+<input type="color" id="targetColor">
+</div>
+
+<div class="row">
+<label data-i18n="label_width"></label>
+<input type="number" id="targetWidth" min="1" max="10">
+</div>
+
+<div class="row">
+<label data-i18n="label_style"></label>
+
+<select id="targetStyle">
+<option value="solid" data-i18n="style_solid"></option>
+<option value="dashed" data-i18n="style_dashed"></option>
+<option value="dotted" data-i18n="style_dotted"></option>
+</select>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2 data-i18n="section_downloadEntire"></h2>
+
+<div class="row">
+
+<label data-i18n="label_pageModifierKeys"></label>
+
+<div class="keys">
+<label><input type="checkbox" id="pageCtrl"> Ctrl</label>
+<label><input type="checkbox" id="pageAlt"> Alt</label>
+<label><input type="checkbox" id="pageShift"> Shift</label>
+</div>
+
+</div>
+
+<div class="row">
+  <label data-i18n="label_triggerKey"></label>
+  <input type="text" id="pageTrigger" maxlength="1" inputmode="latin" autocomplete="off">
+  <span class="ird-note-inline" data-i18n="note_triggerKeyInput"></span>
+</div>
+
+<div class="row">
+<label data-i18n="label_pageDownloadMode"></label>
+
+<select id="pageDownloadMode">
+  <option value="normal" data-i18n="option_pageDownloadMode_normal"></option>
+  <option value="careful" data-i18n="option_pageDownloadMode_careful"></option>
+  <option value="almostSure" data-i18n="option_pageDownloadMode_almostSure"></option>
+</select>
+</div>
+
+<div class="row" id="almostSureScrollStepsRow">
+<label data-i18n="label_almostSureScrollSteps"></label>
+<input type="number" id="almostSureScrollSteps" min="1" max="100" step="1">
+<span class="ird-note-inline" data-i18n="note_almostSureAutoStop"></span>
+</div>
+
+<div class="row" id="almostSureScrollAmountRow">
+  <label data-i18n="label_scrollAmount"></label>
+  <input type="text" id="scrollAmount" inputmode="decimal">
+</div>
+
+<div class="row-note-under-input" id="almostSureScrollAmountNoteRow">
+  <label></label>
+  <div class="ird-note" data-i18n="note_scrollAmount"></div>
+</div>
+
+<div class="row" id="almostSureScrollIntervalRow">
+  <label data-i18n="label_scrollInterval"></label>
+  <input type="text" id="scrollInterval" inputmode="numeric">
+</div>
+
+<div class="row-note-under-input" id="almostSureScrollIntervalNoteRow">
+  <label></label>
+  <div class="ird-note" data-i18n="note_scrollInterval"></div>
+</div>
+
+<div class="row" id="almostSureNoticeRow">
+<label></label>
+<div class="ird-note" data-i18n="note_almostSureGuide"></div>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2 data-i18n="section_filename"></h2>
+
+<div class="row" id="filenamePresetRow">
+
+<label data-i18n="label_preset"></label>
+
+<select id="filenamePreset">
+<option value="original" data-i18n="option_filename_original"></option>
+<option value="yyyymmdd-hms">YYYYMMDD-HHMMSS</option>
+<option value="yymmdd-hms">YYMMDD-HHMMSS</option>
+<option value="yyyymmdd_hms">YYYYMMDD_HHMMSS</option>
+<option value="yymmdd_hms">YYMMDD_HHMMSS</option>
+<option value="custom" data-i18n="option_filename_custom"></option>
+</select>
+
+<select id="numberFormat">
+<option value="-000n">-000n</option>
+<option value="-00n">-00n</option>
+<option value="_000n">_000n</option>
+<option value="_00n">_00n</option>
+</select>
+
+<span id="filenameSample"></span>
+<div id="filenamePresetNote" class="ird-note"></div>
+
+</div>
+
+<div class="row" id="customFilenameRow">
+
+<label data-i18n="label_customFilename"></label>
+
+<input type="text" id="customFilename">
+
+<select id="customNumberFormat">
+<option value="-000n">-000n</option>
+<option value="-00n">-00n</option>
+<option value="_000n">_000n</option>
+<option value="_00n">_00n</option>
+</select>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2 data-i18n="section_downloadFolder"></h2>
+
+<div class="row">
+
+<label data-i18n="label_mode"></label>
+
+<select id="folderMode">
+<option value="default" data-i18n="option_folder_default"></option>
+<option value="domain" data-i18n="option_folder_domain"></option>
+<option value="custom" data-i18n="option_folder_custom"></option>
+</select>
+
+</div>
+
+<div class="row" id="customFolderRow">
+
+<label data-i18n="label_customFolder"></label>
+
+<input type="text" id="customFolder" data-i18n-placeholder="placeholder_folderName">
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2 data-i18n="section_imageFilter"></h2>
+
+<div class="row">
+<label data-i18n="label_minWidth"></label>
+<input id="minWidth" type="number" min="0" step="1">
+</div>
+
+<div class="row">
+<label data-i18n="label_minHeight"></label>
+<input id="minHeight" type="number" min="0" step="1">
+</div>
+
+</div>
+
+<div class="section">
+
+  <h2 data-i18n="section_backgroundImages"></h2>
+
+  <div class="row" id="includeBackgroundRow">
+    <label>
+      <input type="checkbox" id="includeBackground">
+      <span data-i18n="option_includeBackground"></span>
+    </label>
+  </div>
+
+  <div class="row" id="includeUnknownSizeRow">
+    <label data-i18n="label_unknownSize"></label>
+
+    <div class="keys">
+      <label>
+        <input type="radio" name="unknownSize" value="true">
+        <span data-i18n="option_unknownSize_yes"></span>
+      </label>
+
+      <label>
+        <input type="radio" name="unknownSize" value="false">
+        <span data-i18n="option_unknownSize_no"></span>
+      </label>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+<button id="save" data-i18n="button_save"></button>
+</div>
+
+</div>
+
+<div id="aboutView" class="hidden">
+
+  <div id="aboutBackWrap">
+    <a href="#" id="backToSettings" data-i18n="about_back"></a>
+  </div>
+
+  <div class="section aboutSection">
+
+    <div class="aboutTopRow">
+
+      <div class="aboutTopLeft">
+        <div class="aboutMiniTitle" data-i18n="about_link"></div>
+      </div>
+
+      <div class="aboutTopMain">
+        <h2 data-i18n="about_app_name"></h2>
+        <p class="aboutVersion"><span data-i18n="about_version_label"></span> <span id="aboutVersionValue"></span></p>
+      </div>
+    </div>
+
+    <div class="aboutMiddleRow">
+
+      <div class="aboutInfoBlock">
+
+        <div class="aboutInfoRow">
+          <span class="aboutInfoLabel" data-i18n="about_author_label"></span>
+          <span class="aboutInfoValue">Wacallanaides</span>
+        </div>
+
+        <div class="aboutInfoRow">
+          <span class="aboutInfoLabel" data-i18n="about_thanks_label"></span>
+          <span class="aboutInfoValue" data-i18n="about_thanks_value"></span>
+        </div>
+      </div>
+
+      <div class="aboutEmblemBlock">
+        <img id="aboutLogo" src="crest.jpg" alt="logo">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/options.js"></script>
+
+</div>
+</body>
+</html>
