@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Range Downloader</title>
+  <meta name="description" content="Image Range Downloader is a Chrome extension for efficiently collecting and saving images from web pages.">
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --text: #1f2328;
+      --sub: #59636e;
+      --line: #d0d7de;
+      --accent: #c02e8a;
+      --accent-soft: #f8e8f2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, #ffffff 0%, #fcf7fa 100%);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 8px 24px rgba(31, 35, 40, 0.06);
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 40px;
+      line-height: 1.15;
+    }
+
+    .tagline {
+      margin: 0;
+      font-size: 18px;
+      color: var(--sub);
+    }
+
+    .section {
+      margin-top: 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(31, 35, 40, 0.04);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      font-weight: 600;
+    }
+
+    .btn.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .feature {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--sub);
+      font-size: 14px;
+    }
+
+    .muted {
+      color: var(--sub);
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: var(--sub);
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .hero,
+      .section {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .tagline {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge">Chrome Extension</div>
+      <h1>Image Range Downloader</h1>
+      <p class="tagline">Collect Page Images Faster</p>
+
+      <div class="links">
+        <a class="btn primary" href="https://github.com/MunusModulus/imagerangedownloader" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+        <a class="btn" href="mailto:munusmodulus+dev@gmail.com">Contact Support</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>About</h2>
+      <p>
+        Image Range Downloader is a Chrome extension for efficiently collecting and saving images from web pages.
+      </p>
+      <p>
+        It supports range selection downloads, key-triggered bulk downloads, CSS background-image support, size filtering, filename customization, and automatic folder sorting by domain.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="feature">
+          <h3>Range Selection Download</h3>
+          <p>Select an area with modifier keys and download the images inside it at once.</p>
+        </div>
+        <div class="feature">
+          <h3>Bulk Page Download</h3>
+          <p>Trigger page-wide image downloads with modifier keys and any key you choose.</p>
+        </div>
+        <div class="feature">
+          <h3>Almost Sure Mode</h3>
+          <p>Scrolls through the page before collecting images, useful for lazy-loaded or scroll-loaded pages.</p>
+        </div>
+        <div class="feature">
+          <h3>Background Image Support</h3>
+          <p>Can include images used through CSS background-image, not just standard img elements.</p>
+        </div>
+        <div class="feature">
+          <h3>Filename Control</h3>
+          <p>Supports original names, date-based filenames, and custom names with numbering.</p>
+        </div>
+        <div class="feature">
+          <h3>Folder Sorting by Domain</h3>
+          <p>Can automatically create domain-based folders inside the default download folder.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Privacy</h2>
+      <p>
+        Image Range Downloader does not collect personal data.
+      </p>
+      <p class="muted">
+        It uses browser download and storage features for local operation and settings.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Support</h2>
+      <p>
+        For support, bug reports, or suggestions, please use the following:
+      </p>
+      <ul>
+        <li>Email: <a href="mailto:munusmodulus+dev@gmail.com">munusmodulus+dev@gmail.com</a></li>
+        <li>Project page: <a href="https://munusmodulus.github.io/imagerangedownloader/" target="_blank" rel="noopener noreferrer">https://munusmodulus.github.io/imagerangedownloader/</a></li>
+        <li>Repository: <a href="https://github.com/MunusModulus/imagerangedownloader" target="_blank" rel="noopener noreferrer">https://github.com/MunusModulus/imagerangedownloader</a></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Author</h2>
+      <p>Wacallanaides (MunusModulus)</p>
+    </section>
+
+    <div class="footer">
+      <p>Image Range Downloader Support Page</p>
+    </div>
+  </div>
+</body>
+</html>
